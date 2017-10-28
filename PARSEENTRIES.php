@@ -180,6 +180,8 @@ class PARSEENTRIES
 				do
 				{
 					$line = trim(fgets($this->fid));
+					if(preg_match("/^\s*%/", $line))  //commented!
+						$line = false ;
 				}
 				while(!feof($this->fid) && !$line);
 				return $line;
